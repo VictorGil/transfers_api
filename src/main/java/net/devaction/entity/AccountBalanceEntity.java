@@ -26,6 +26,12 @@ public class AccountBalanceEntity{
     }
 
     @Override
+    public String toString(){
+        return "AccountBalanceEntity [accountId=" + accountId + ", customerId=" + customerId + ", transferId=" + transferId + ", balance="
+                + balance + "]";
+    }
+
+    @Override
     public int hashCode(){
         final int prime = 31;
         int result = 1;
