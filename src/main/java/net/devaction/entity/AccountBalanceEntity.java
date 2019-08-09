@@ -13,24 +13,31 @@ public class AccountBalanceEntity{
     
     private String id;
     private String customerId;
+    private String transferId;
     private BigDecimal balance;
-        
-    public AccountBalanceEntity(String id, String customerId, BigDecimal balance){
+    
+    public AccountBalanceEntity(){}
+    
+    public AccountBalanceEntity(String id, String customerId, String transferId, BigDecimal balance){
         this.id = id;
         this.customerId = customerId;
+        this.transferId = transferId;
         this.balance = balance;
     }
-    
+
     @Override
     public int hashCode(){
         final int prime = 31;
         int result = 1;
+        
         result = prime * result + ((balance == null) ? 0 : balance.hashCode());
         result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((transferId == null) ? 0 : transferId.hashCode());
+        
         return result;
     }
-
+    
     @Override
     public boolean equals(Object obj){
         if (this == obj)
@@ -55,9 +62,15 @@ public class AccountBalanceEntity{
                 return false;
         } else if (!id.equals(other.id))
             return false;
+        if (transferId == null){
+            if (other.transferId != null)
+                return false;
+        } else if (!transferId.equals(other.transferId))
+            return false;
         return true;
     }
-
+    
+    
     public String getId(){
         return id;
     }
@@ -70,10 +83,16 @@ public class AccountBalanceEntity{
     public void setCustomerId(String customerId){
         this.customerId = customerId;
     }
+    public String getTransferId(){
+        return transferId;
+    }
+    public void setTransferId(String transferId){
+        this.transferId = transferId;
+    }
     public BigDecimal getBalance(){
         return balance;
     }
     public void setBalance(BigDecimal balance){
         this.balance = balance;
-    }
+    }        
 }
