@@ -48,10 +48,13 @@ public class TransferEntity{
         if (getClass() != obj.getClass())
             return false;
         TransferEntity other = (TransferEntity) obj;
-        if (accountId == null){
-            if (other.accountId != null)
+        
+        // The id value should be unique, so it makes sense 
+        // that it is the first field to be checked
+        if (id == null){
+            if (other.id != null)
                 return false;
-        } else if (!accountId.equals(other.accountId))
+        } else if (!id.equals(other.id))
             return false;
         if (amountScale == null){
             if (other.amountScale != null)
@@ -63,10 +66,10 @@ public class TransferEntity{
                 return false;
         } else if (!amountUnscaled.equals(other.amountUnscaled))
             return false;
-        if (id == null){
-            if (other.id != null)
+        if (accountId == null){
+            if (other.accountId != null)
                 return false;
-        } else if (!id.equals(other.id))
+        } else if (!accountId.equals(other.accountId))
             return false;
         return true;
     }
