@@ -24,7 +24,7 @@ class AccountConverterTest {
         Account account = new Account("1", "2", 94527L, 2);
         
         Assertions.assertEquals(entityExpected, 
-                AccountConverter.convertToPojo(account));
+                AccountBalanceConverter.convertToPojo(account));
     }
     
     @Test
@@ -35,6 +35,6 @@ class AccountConverterTest {
         AccountBalanceEntity entity = new AccountBalanceEntity("1", "2", balance);
         
         Assertions.assertEquals(avroExpected, 
-                AccountConverter.convertToAvro(entity));
+                AccountBalanceConverter.convertToAvro(entity));
     }
 }
