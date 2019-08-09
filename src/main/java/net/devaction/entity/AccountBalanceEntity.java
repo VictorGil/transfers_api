@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  */
 public class AccountBalanceEntity{
     
-    private String id;
+    private String accountId;
     private String customerId;
     private String transferId;
     private BigDecimal balance;
@@ -19,7 +19,7 @@ public class AccountBalanceEntity{
     public AccountBalanceEntity(){}
     
     public AccountBalanceEntity(String id, String customerId, String transferId, BigDecimal balance){
-        this.id = id;
+        this.accountId = id;
         this.customerId = customerId;
         this.transferId = transferId;
         this.balance = balance;
@@ -32,7 +32,7 @@ public class AccountBalanceEntity{
         
         result = prime * result + ((balance == null) ? 0 : balance.hashCode());
         result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((accountId == null) ? 0 : accountId.hashCode());
         result = prime * result + ((transferId == null) ? 0 : transferId.hashCode());
         
         return result;
@@ -47,6 +47,9 @@ public class AccountBalanceEntity{
         if (getClass() != obj.getClass())
             return false;
         AccountBalanceEntity other = (AccountBalanceEntity) obj;
+        
+        // We first check the transfer id because its value is the most 
+        // likely to be unique of all the instance fields
         if (transferId == null){
             if (other.transferId != null)
                 return false;
@@ -57,10 +60,10 @@ public class AccountBalanceEntity{
                 return false;
         } else if (!customerId.equals(other.customerId))
             return false;
-        if (id == null){
-            if (other.id != null)
+        if (accountId == null){
+            if (other.accountId != null)
                 return false;
-        } else if (!id.equals(other.id))
+        } else if (!accountId.equals(other.accountId))
             return false;
         if (balance == null){
             if (other.balance != null)
@@ -71,12 +74,12 @@ public class AccountBalanceEntity{
     }
     
     // just getters and setters
-    public String getId(){
-        return id;
+    public String getAccountId(){
+        return accountId;
     }
     
-    public void setId(String id){
-        this.id = id;
+    public void setAccountId(String accountId){
+        this.accountId = accountId;
     }
     
     public String getCustomerId(){
