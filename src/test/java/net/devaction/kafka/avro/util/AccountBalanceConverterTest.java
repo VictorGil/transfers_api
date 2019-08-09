@@ -14,7 +14,7 @@ import net.devaction.kafka.avro.AccountBalance;
  *
  * since August 2019
  */
-class AccountConverterTest {
+class AccountBalanceConverterTest {
 
     @Test
     public void testConvertToPojo01() {
