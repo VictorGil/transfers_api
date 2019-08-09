@@ -2,7 +2,6 @@ package net.devaction.entity.util;
 
 import java.math.BigDecimal;
 
-
 /**
  * @author Víctor Gil
  *
