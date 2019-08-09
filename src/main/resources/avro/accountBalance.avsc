@@ -1,7 +1,7 @@
 [
     {"namespace": "net.devaction.kafka.avro",
      "type": "record",
-     "name": "Account",
+     "name": "AccountBalance",
      "fields": [
          {"name": "id", "type": "string"},
          {"name": "customer_id", "type": "string"},
