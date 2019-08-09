@@ -1,0 +1,12 @@
+[
+    {"namespace": "net.devaction.kafka.avro",
+     "type": "record",
+     "name": "Transfer",
+     "fields": [
+         {"name": "id", "type": "string"},
+         {"name": "account_id", "type": "string"},
+         {"name": "amount_number", "type": "long"},
+         {"name": "amount_scale", "type": "int"}         
+     ]
+    }
+]

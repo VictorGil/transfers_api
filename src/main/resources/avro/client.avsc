@@ -1,0 +1,14 @@
+[
+{"namespace": "net.devaction.kafka.avro",
+ "type": "record",
+ "name": "Customer",
+ "fields": [
+     {"name": "id", "type": "string"},
+     {"name": "firstName", "type": "string"},
+     {"name": "lastName", "type": "string"},
+     {"name": "email", "type": "string"},
+     {"name": "address", "type": "string"},
+     {"name": "level", "type": "string", "default": "bronze"}
+ ]
+}
+]
