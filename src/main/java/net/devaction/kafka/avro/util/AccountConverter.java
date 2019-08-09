@@ -2,7 +2,7 @@ package net.devaction.kafka.avro.util;
 
 import java.math.BigDecimal;
 
-import net.devaction.entity.AccountEntity;
+import net.devaction.entity.AccountBalanceEntity;
 import net.devaction.entity.util.NumUtil;
 import net.devaction.kafka.avro.Account;
 
@@ -13,15 +13,15 @@ import net.devaction.kafka.avro.Account;
  */
 public class AccountConverter {    
     
-    public static AccountEntity convertToPojo(Account account){
+    public static AccountBalanceEntity convertToPojo(Account account){
         BigDecimal balance = NumUtil.convert(account.getBalanceNumber(), 
                 account.getBalanceScale());
         
-        return new AccountEntity(account.getId(), account.getCustomerId(), 
+        return new AccountBalanceEntity(account.getId(), account.getCustomerId(), 
                 balance);
     }    
     
-    public static Account convertToAvro(AccountEntity entity){
+    public static Account convertToAvro(AccountBalanceEntity entity){
         return new Account(entity.getId(), entity.getCustomerId(), 
                 entity.getBalance().unscaledValue().longValueExact(), 
                 entity.getBalance().scale());

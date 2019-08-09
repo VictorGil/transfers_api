@@ -9,13 +9,13 @@ import java.math.BigDecimal;
  * 
  * DTO/POJO class to avoid having the Avro-related code and limitations
  */
-public class AccountEntity{
+public class AccountBalanceEntity{
     
     private String id;
     private String customerId;
     private BigDecimal balance;
         
-    public AccountEntity(String id, String customerId, BigDecimal balance){
+    public AccountBalanceEntity(String id, String customerId, BigDecimal balance){
         this.id = id;
         this.customerId = customerId;
         this.balance = balance;
@@ -39,7 +39,7 @@ public class AccountEntity{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        AccountEntity other = (AccountEntity) obj;
+        AccountBalanceEntity other = (AccountBalanceEntity) obj;
         if (balance == null){
             if (other.balance != null)
                 return false;
