@@ -1,6 +1,7 @@
 package net.devaction.entity;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 import net.devaction.entity.util.DateFormatter;
 
@@ -25,6 +26,13 @@ public class TransferEntity{
                 + "]";
     }
 
+    public TransferEntity(String accountId, BigDecimal amount){
+        id = generateRandomId();
+        this.accountId = accountId;
+        this.amount = amount;
+        transferTS = System.currentTimeMillis();
+    }
+    
     public TransferEntity(String id, String accountId, BigDecimal amount){
         this.id = id;
         this.accountId = accountId;
@@ -32,6 +40,13 @@ public class TransferEntity{
         transferTS = System.currentTimeMillis();
     }
 
+    public TransferEntity(String accountId, BigDecimal amount, long transferTS){
+        this.id = generateRandomId();
+        this.accountId = accountId;
+        this.amount = amount;
+        this.transferTS = transferTS;
+    }
+    
     public TransferEntity(String id, String accountId, BigDecimal amount, long transferTS){
         this.id = id;
         this.accountId = accountId;
@@ -45,10 +60,10 @@ public class TransferEntity{
     public int hashCode(){
         final int prime = 31;
         int result = 1;
-        
+
+        result = prime * result + ((id == null) ? 0 : id.hashCode());        
         result = prime * result + ((accountId == null) ? 0 : accountId.hashCode());
         result = prime * result + ((amount == null) ? 0 : amount.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + (int) (transferTS ^ (transferTS >>> 32));
         
         return result;
@@ -93,6 +108,18 @@ public class TransferEntity{
         return true;
     }
 
+    public void generateId(){
+        if (id != null)
+            throw new IllegalStateException(
+                    "The id should not have been given any value");
+        
+        id = generateRandomId();    
+    }
+    
+    String generateRandomId(){
+        return UUID.randomUUID().toString().substring(24);
+    }
+    
     public String getId(){
         return id;
     }
@@ -129,4 +156,3 @@ public class TransferEntity{
         this.transferTS = transferTS;
     }    
 }
-
