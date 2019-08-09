@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
  *
  * since August 2019
  */
-class TransferentityTest{
-    private static final Logger log = LoggerFactory.getLogger(TransferentityTest.class);
+class TransferEntityTest{
+    private static final Logger log = LoggerFactory.getLogger(TransferEntityTest.class);
 
     @Test
     void testGenerateRandomId(){

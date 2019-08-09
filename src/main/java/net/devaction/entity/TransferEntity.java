@@ -117,6 +117,7 @@ public class TransferEntity{
     }
     
     String generateRandomId(){
+        // last 12 hexadecimal digits of the random UUID
         return UUID.randomUUID().toString().substring(24);
     }
     
