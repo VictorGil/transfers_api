@@ -5,6 +5,7 @@
      "fields": [
          {"name": "id", "type": "string"},
          {"name": "customer_id", "type": "string"},
+         {"name": "transfer_id", "type": "string"},
          {"name": "balance_unscaled", "type": "long"},
          {"name": "balance_scale", "type": "int"}         
      ]
