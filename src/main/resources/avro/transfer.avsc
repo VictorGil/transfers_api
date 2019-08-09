@@ -6,7 +6,8 @@
          {"name": "id", "type": "string"},
          {"name": "account_id", "type": "string"},
          {"name": "amount_unscaled", "type": "long"},
-         {"name": "amount_scale", "type": "int"}         
+         {"name": "amount_scale", "type": "int"},
+         {"name": "transfer_TS", "type": "long"}         
      ]
     }
 ]

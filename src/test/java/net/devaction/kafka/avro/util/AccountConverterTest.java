@@ -19,6 +19,7 @@ class AccountConverterTest {
     @Test
     public void testConvertToPojo01() {
         BigDecimal balance = new BigDecimal("945.27");
+        
         AccountBalanceEntity entityExpected = new AccountBalanceEntity("test_account_id", "test_customer_id", 
                 "test_transfer_id", balance);
         
