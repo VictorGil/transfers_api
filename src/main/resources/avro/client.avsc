@@ -1,7 +1,7 @@
 [
 {"namespace": "net.devaction.kafka.avro",
  "type": "record",
- "name": "Customer",
+ "name": "Client",
  "fields": [
      {"name": "id", "type": "string"},
      {"name": "firstName", "type": "string"},
