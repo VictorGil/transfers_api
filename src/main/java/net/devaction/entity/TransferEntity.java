@@ -88,8 +88,12 @@ public class TransferEntity{
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
-            return false;
+            return false;       
         
+        return innerEquals(other);
+    }
+
+    private boolean innerEquals(TransferEntity other){
         if (amount == null){
             if (other.amount != null)
                 return false;
@@ -106,8 +110,9 @@ public class TransferEntity{
             return false;
         
         return true;
+        //return transferTS == other.transferTS;
     }
-
+    
     public void generateId(){
         if (id != null)
             throw new IllegalStateException(
