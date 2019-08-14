@@ -70,18 +70,22 @@ public class ClientEntity{
         } else if (!id.equals(other.id))
             return false;
         
-        if (address == null){
-            if (other.address != null)
-                return false;
-        } else if (!address.equals(other.address))
-            return false;
-        
         if (email == null){
             if (other.email != null)
                 return false;
         } else if (!email.equals(other.email))
             return false;
         
+        if (address == null){
+            if (other.address != null)
+                return false;
+        } else if (!address.equals(other.address))
+            return false;        
+        
+        return innerEquals(other);
+    }
+
+    private boolean innerEquals(ClientEntity other){
         if (firstName == null){
             if (other.firstName != null)
                 return false;
@@ -102,7 +106,7 @@ public class ClientEntity{
         
         return true;
     }
-
+    
     @Override
     public String toString(){
         return "ClientEntity [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", address="

@@ -17,15 +17,6 @@ public class TransferEntity{
     private BigDecimal amount;
     private long transferTS;
     
-    @Override
-    public String toString(){
-        return "TransferEntity [id=" + id + 
-                ", accountId=" + accountId + 
-                ", amount=" + amount + 
-                ", transferTS='" + getTransferDateTimeString() + " (" + transferTS + ")'" 
-                + "]";
-    }
-
     public TransferEntity(String accountId, BigDecimal amount){
         id = generateRandomId();
         this.accountId = accountId;
@@ -55,15 +46,15 @@ public class TransferEntity{
     }
     
     public TransferEntity(){}
-
+    
     @Override
     public int hashCode(){
         final int prime = 31;
         int result = 1;
-
-        result = prime * result + ((id == null) ? 0 : id.hashCode());        
+        
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((accountId == null) ? 0 : accountId.hashCode());
-        result = prime * result + ((amount == null) ? 0 : amount.hashCode());
+        result = prime * result + ((amount == null) ? 0 : amount.hashCode());        
         result = prime * result + (int) (transferTS ^ (transferTS >>> 32));
         
         return result;
@@ -83,21 +74,11 @@ public class TransferEntity{
         TransferEntity other = (TransferEntity) obj;
         
         // Since the id must be unique, it makes sense
-        // that it is the first instance field to be checked
+        // that it is the first instance field to be checked         
         if (id == null){
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
-            return false;       
-        
-        return innerEquals(other);
-    }
-
-    private boolean innerEquals(TransferEntity other){
-        if (amount == null){
-            if (other.amount != null)
-                return false;
-        } else if (!amount.equals(other.amount))
             return false;
         
         if (accountId == null){
@@ -106,11 +87,17 @@ public class TransferEntity{
         } else if (!accountId.equals(other.accountId))
             return false;
         
-        if (transferTS != other.transferTS)
+        return innerEquals(other);
+    }
+
+    private boolean innerEquals(TransferEntity other) {        
+        if (amount == null){
+            if (other.amount != null)
+                return false;
+        } else if (!amount.equals(other.amount))
             return false;
-        
-        return true;
-        //return transferTS == other.transferTS;
+                
+        return transferTS == other.transferTS;        
     }
     
     public void generateId(){
