@@ -15,21 +15,24 @@ public class AccountBalanceEntity{
     private String customerId;
     private String transferId;
     private BigDecimal balance;
+    private long version;
     
     public AccountBalanceEntity(){}
     
-    public AccountBalanceEntity(String id, String customerId, String transferId, BigDecimal balance){
+    public AccountBalanceEntity(String id, String customerId, String transferId, 
+            BigDecimal balance, long version){
         this.accountId = id;
         this.customerId = customerId;
         this.transferId = transferId;
         this.balance = balance;
+        this.version = version;
     }
 
     @Override
     public String toString(){
         return "AccountBalanceEntity [accountId=" + accountId + ", customerId=" + customerId + ", transferId=" + transferId + ", balance="
-                + balance + "]";
-    }    
+                + balance + ", version=" + version + "]";
+    }
 
     @Override
     public int hashCode(){
@@ -40,6 +43,7 @@ public class AccountBalanceEntity{
         result = prime * result + ((balance == null) ? 0 : balance.hashCode());
         result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
         result = prime * result + ((transferId == null) ? 0 : transferId.hashCode());
+        result = prime * result + (int) (version ^ (version >>> 32));
         
         return result;
     }
@@ -61,6 +65,9 @@ public class AccountBalanceEntity{
             if (other.accountId != null)
                 return false;
         } else if (!accountId.equals(other.accountId))
+            return false;
+        
+        if (version != other.version)
             return false;
         
         if (balance == null){
@@ -87,6 +94,7 @@ public class AccountBalanceEntity{
         
         return true;
     }
+    
     // just getters and setters
     public String getAccountId(){
         return accountId;
@@ -118,5 +126,13 @@ public class AccountBalanceEntity{
     
     public void setBalance(BigDecimal balance){
         this.balance = balance;
+    }
+
+    public long getVersion(){
+        return version;
+    }
+
+    public void setVersion(long version){
+        this.version = version;
     }        
 }

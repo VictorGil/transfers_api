@@ -20,14 +20,14 @@ public class AccountBalanceConverter {
                 account.getBalanceScale());
         
         return new AccountBalanceEntity(account.getAccountId(), account.getCustomerId(), 
-                account.getTransferId(), balance);
+                account.getTransferId(), balance, account.getVersion());
     }    
     
     public static AccountBalance convertToAvro(AccountBalanceEntity entity){
         return new AccountBalance(entity.getAccountId(), entity.getCustomerId(), 
                 entity.getTransferId(),
                 entity.getBalance().unscaledValue().longValueExact(), 
-                entity.getBalance().scale());
-    } 
-   
+                entity.getBalance().scale(),
+                entity.getVersion());
+    }   
 }

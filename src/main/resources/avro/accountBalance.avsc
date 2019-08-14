@@ -7,7 +7,8 @@
          {"name": "customer_id", "type": "string"},
          {"name": "transfer_id", "type": "string"},
          {"name": "balance_unscaled", "type": "long"},
-         {"name": "balance_scale", "type": "int"}         
+         {"name": "balance_scale", "type": "int"},
+         {"name": "version", "type": "long"}         
      ]
     }
 ]
