@@ -113,6 +113,15 @@ public class TransferEntity{
         return UUID.randomUUID().toString().substring(24);
     }
     
+    @Override
+    public String toString(){
+        return "TransferEntity [id=" + id + ", accountId=" 
+                + accountId + ", amount=" + amount + 
+                ", transferTS=" + transferTS + " (" + 
+                DateFormatter.getDateTimeString(transferTS) 
+                + ")]";
+    }
+
     public String getId(){
         return id;
     }

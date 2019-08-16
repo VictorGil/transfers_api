@@ -109,8 +109,9 @@ public class ClientEntity{
     
     @Override
     public String toString(){
-        return "ClientEntity [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", address="
-                + address + ", level=" + level + "]";
+        return "ClientEntity [id=" + id + ", firstName=" + firstName 
+                + ", lastName=" + lastName + ", email=" + email + 
+                ", address=" + address + ", level=" + level + "]";
     }
 
     public void generateId(){
