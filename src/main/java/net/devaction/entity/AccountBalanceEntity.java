@@ -28,10 +28,20 @@ public class AccountBalanceEntity{
         this.version = version;
     }
 
+    public AccountBalanceEntity(String id, String clientId){
+        this.accountId = id;
+        this.clientId = clientId;
+        this.transferId = "INITIAL";
+        this.balance = BigDecimal.ZERO;
+        this.version = 0L;
+    }
+    
     @Override
     public String toString(){
-        return "AccountBalanceEntity [accountId=" + accountId + ", clientId=" + clientId + ", transferId=" + transferId + ", balance="
-                + balance + ", version=" + version + "]";
+        return "AccountBalanceEntity [accountId=" + accountId + 
+                ", clientId=" + clientId + ", transferId=" + 
+                transferId + ", balance=" + balance + 
+                ", version=" + version + "]";
     }
 
     @Override
