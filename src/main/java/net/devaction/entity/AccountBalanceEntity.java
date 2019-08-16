@@ -12,17 +12,17 @@ import java.math.BigDecimal;
 public class AccountBalanceEntity{
     
     private String accountId;
-    private String customerId;
+    private String clientId;
     private String transferId;
     private BigDecimal balance;
     private long version;
     
     public AccountBalanceEntity(){}
     
-    public AccountBalanceEntity(String id, String customerId, String transferId, 
+    public AccountBalanceEntity(String id, String clientId, String transferId, 
             BigDecimal balance, long version){
         this.accountId = id;
-        this.customerId = customerId;
+        this.clientId = clientId;
         this.transferId = transferId;
         this.balance = balance;
         this.version = version;
@@ -30,7 +30,7 @@ public class AccountBalanceEntity{
 
     @Override
     public String toString(){
-        return "AccountBalanceEntity [accountId=" + accountId + ", customerId=" + customerId + ", transferId=" + transferId + ", balance="
+        return "AccountBalanceEntity [accountId=" + accountId + ", clientId=" + clientId + ", transferId=" + transferId + ", balance="
                 + balance + ", version=" + version + "]";
     }
 
@@ -41,7 +41,7 @@ public class AccountBalanceEntity{
         
         result = prime * result + ((accountId == null) ? 0 : accountId.hashCode());
         result = prime * result + ((balance == null) ? 0 : balance.hashCode());
-        result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
+        result = prime * result + ((clientId == null) ? 0 : clientId.hashCode());
         result = prime * result + ((transferId == null) ? 0 : transferId.hashCode());
         result = prime * result + (int) (version ^ (version >>> 32));
         
@@ -80,10 +80,10 @@ public class AccountBalanceEntity{
     }
 
     private boolean innerEquals(AccountBalanceEntity other) {
-        if (customerId == null){
-            if (other.customerId != null)
+        if (clientId == null){
+            if (other.clientId != null)
                 return false;
-        } else if (!customerId.equals(other.customerId))
+        } else if (!clientId.equals(other.clientId))
             return false;
         
         if (transferId == null){
@@ -104,12 +104,12 @@ public class AccountBalanceEntity{
         this.accountId = accountId;
     }
     
-    public String getCustomerId(){
-        return customerId;
+    public String getClientId(){
+        return clientId;
     }
     
-    public void setCustomerId(String customerId){
-        this.customerId = customerId;
+    public void setClientId(String clientId){
+        this.clientId = clientId;
     }
     
     public String getTransferId(){

@@ -12,5 +12,8 @@
         <Root level="debug" additivity="false">
             <AppenderRef ref="console" />
         </Root>
+        
+        <Logger name="net.devaction" level="trace" additivity="true">
+        </Logger>
     </Loggers>
 </Configuration>
