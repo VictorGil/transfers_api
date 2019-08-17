@@ -9,4 +9,3 @@ Together, they are an example of how use Kafka in order to implement event-drive
   
  - Maven 3  
  - Java 12+  
- - Confluent platform (which includes Kafka)  
