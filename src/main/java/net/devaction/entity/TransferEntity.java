@@ -13,7 +13,10 @@ import net.devaction.entity.util.DateFormatter;
 public class TransferEntity{
 
     private String id;
+    
+    // Please note that this should be used as the Kafka key 
     private String accountId;
+    
     private BigDecimal amount;
     private long transferTS;
     
