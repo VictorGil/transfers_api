@@ -8,4 +8,4 @@ Together, they are an example of how use Kafka in order to implement event-drive
 ## Requirements
   
  - Maven 3  
- - Java 12+  
+ - Java 12  
