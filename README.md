@@ -1,9 +1,10 @@
 # Transfers API
   
-This repository contains the entities (regular POJOs) and Avro classes used by 
-[transfers_recording_service](https://github.com/VictorGil/transfers_recording_service/).  
+This repository contains the entities (regular POJOs) and Avro classes used by:  
+ - [transfers_recording_service](https://github.com/VictorGil/transfers_recording_service/)
+ - [transfers-websockets-service](https://github.com/VictorGil/transfers-websockets-service/)  
   
-Together, they are an example of how use Kafka in order to implement event-driven microservices.  
+Altogether, they are an example of how use Kafka in order to implement event-driven microservices.  
   
 ## Requirements
   
