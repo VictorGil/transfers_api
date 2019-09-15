@@ -17,6 +17,20 @@ public class AccountBalanceEntity{
     private BigDecimal balance;
     private long version;
     
+    private static final String N_A = "N/A";
+    
+    public static AccountBalanceEntity createNAobject(String invalidAccountId) {
+        AccountBalanceEntity entity = new AccountBalanceEntity();
+        
+        entity.setAccountId(invalidAccountId);
+        entity.setClientId(N_A);
+        entity.setTransferId(N_A);
+        entity.setBalance(BigDecimal.ZERO);
+        entity.setVersion(-1L);
+        
+        return entity;
+    }
+    
     public AccountBalanceEntity(){}
     
     public AccountBalanceEntity(String id, String clientId, String transferId, 
