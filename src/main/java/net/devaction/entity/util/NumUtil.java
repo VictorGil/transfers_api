@@ -8,10 +8,10 @@ import java.math.BigDecimal;
  * since August 2019
  */
 public class NumUtil {
-    
+
     private NumUtil(){}
-    
-    public static BigDecimal convert(long number, int scale){        
+
+    public static BigDecimal convert(long number, int scale){
         return BigDecimal.valueOf(number, scale);
     }
 }

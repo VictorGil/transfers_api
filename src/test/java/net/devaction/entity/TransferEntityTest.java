@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 class TransferEntityTest{
     private static final Logger log = LoggerFactory.getLogger(TransferEntityTest.class);
-    
+
     @Test
     void testGenerateRandomId(){
         String id = new TransferEntity().generateRandomId();

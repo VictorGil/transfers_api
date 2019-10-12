@@ -11,23 +11,23 @@ import net.devaction.kafka.avro.AccountBalance;
  *
  * since August 2019
  */
-public class AccountBalanceConverter {    
+public class AccountBalanceConverter {
 
     private AccountBalanceConverter(){}
-    
+
     public static AccountBalanceEntity convertToPojo(AccountBalance account){
-        BigDecimal balance = NumUtil.convert(account.getBalanceUnscaled(), 
+        BigDecimal balance = NumUtil.convert(account.getBalanceUnscaled(),
                 account.getBalanceScale());
-        
-        return new AccountBalanceEntity(account.getAccountId(), account.getClientId(), 
+
+        return new AccountBalanceEntity(account.getAccountId(), account.getClientId(),
                 account.getTransferId(), balance, account.getVersion());
-    }    
-    
+    }
+
     public static AccountBalance convertToAvro(AccountBalanceEntity entity){
-        return new AccountBalance(entity.getAccountId(), entity.getClientId(), 
+        return new AccountBalance(entity.getAccountId(), entity.getClientId(),
                 entity.getTransferId(),
-                entity.getBalance().unscaledValue().longValueExact(), 
+                entity.getBalance().unscaledValue().longValueExact(),
                 entity.getBalance().scale(),
                 entity.getVersion());
-    }   
+    }
 }

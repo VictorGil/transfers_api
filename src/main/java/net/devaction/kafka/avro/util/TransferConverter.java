@@ -12,21 +12,21 @@ import net.devaction.kafka.avro.Transfer;
  * since August 2019
  */
 public class TransferConverter {
-    
+
     private TransferConverter() {}
-    
+
     public static TransferEntity convertToPojo(Transfer transfer){
-        BigDecimal amount = NumUtil.convert(transfer.getAmountUnscaled(), 
-                transfer.getAmountScale()); 
-        
-        
-        return new TransferEntity(transfer.getId(), transfer.getAccountId(), amount, 
+        BigDecimal amount = NumUtil.convert(transfer.getAmountUnscaled(),
+                transfer.getAmountScale());
+
+
+        return new TransferEntity(transfer.getId(), transfer.getAccountId(), amount,
                 transfer.getTransferTS());
     }
-    
+
     public static Transfer convertToAvro(TransferEntity entity) {
-        return new Transfer(entity.getId(), entity.getAccountId(), 
-                entity.getAmount().unscaledValue().longValueExact(), 
+        return new Transfer(entity.getId(), entity.getAccountId(),
+                entity.getAmount().unscaledValue().longValueExact(),
                 entity.getAmount().scale(),
                 entity.getTransferTS());
     }
