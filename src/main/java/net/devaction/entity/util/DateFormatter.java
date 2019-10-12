@@ -22,11 +22,11 @@ public class DateFormatter {
         return FORMATTER.format(date);
     }
 
-    public static ZonedDateTime getDateTimeFromEpochMillis(long epochMillis) {
-        return ZonedDateTime.ofInstant(Instant.ofEpochMilli(epochMillis), ZoneId.of("UTC"));
-    }
-
     public static String getDateTimeString(long epochMillis) {
         return getDateTimeString(getDateTimeFromEpochMillis(epochMillis));
+    }
+
+    public static ZonedDateTime getDateTimeFromEpochMillis(long epochMillis) {
+        return ZonedDateTime.ofInstant(Instant.ofEpochMilli(epochMillis), ZoneId.of("UTC"));
     }
 }
