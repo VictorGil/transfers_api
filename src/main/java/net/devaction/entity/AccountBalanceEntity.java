@@ -52,10 +52,10 @@ public class AccountBalanceEntity {
 
     @Override
     public String toString() {
-        return "AccountBalanceEntity [accountId=" + accountId +
-                ", clientId=" + clientId + ", transferId=" +
-                transferId + ", balance=" + balance +
-                ", version=" + version + "]";
+        return "AccountBalanceEntity [accountId=" + accountId
+                + ", clientId=" + clientId + ", transferId="
+                + transferId + ", balance=" + balance
+                + ", version=" + version + "]";
     }
 
     @Override
@@ -74,47 +74,59 @@ public class AccountBalanceEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
+        }
 
-        if (obj == null)
+        if (obj == null) {
             return false;
+        }
 
-        if (getClass() != obj.getClass())
+        if (getClass() != obj.getClass()) {
             return false;
+        }
 
         AccountBalanceEntity other = (AccountBalanceEntity) obj;
 
         if (accountId == null) {
-            if (other.accountId != null)
+            if (other.accountId != null) {
                 return false;
-        } else if (!accountId.equals(other.accountId))
+            }
+        } else if (!accountId.equals(other.accountId)) {
             return false;
+        }
 
-        if (version != other.version)
+        if (version != other.version) {
             return false;
+        }
 
         if (balance == null) {
-            if (other.balance != null)
+            if (other.balance != null) {
                 return false;
-        } else if (!balance.equals(other.balance))
+            }
+        } else if (!balance.equals(other.balance)) {
             return false;
+        }
 
         return innerEquals(other);
     }
 
     private boolean innerEquals(AccountBalanceEntity other) {
         if (clientId == null) {
-            if (other.clientId != null)
+            if (other.clientId != null) {
                 return false;
-        } else if (!clientId.equals(other.clientId))
+            }
+        } else if (!clientId.equals(other.clientId)) {
             return false;
+        }
 
         if (transferId == null) {
-            if (other.transferId != null)
+            if (other.transferId != null) {
                 return false;
-        } else if (!transferId.equals(other.transferId))
+            }
+        } else if (!transferId.equals(other.transferId)) {
             return false;
+        }
 
         return true;
     }

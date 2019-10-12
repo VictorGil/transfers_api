@@ -17,19 +17,15 @@ class ClientConverterTest {
     @Test
     void testConvertToPojo01() {
         ClientEntity expected = new ClientEntity();
-
-        expected.generateId();
-        String id = expected.getId();
-
         expected.setFirstName("Joan");
         expected.setLastName("Iranzo");
         expected.setEmail("j.iranzo@acme.com");
         expected.setAddress("Moon Street 37");
         expected.setLevel("gold");
-
+        expected.generateId();
+        
         Client client = new Client();
-
-        client.setId(id);
+        client.setId(expected.getId());
         client.setFirstName("Joan");
         client.setLastName("Iranzo");
         client.setEmail("j.iranzo@acme.com");

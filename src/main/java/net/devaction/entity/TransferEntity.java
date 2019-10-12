@@ -65,48 +65,58 @@ public class TransferEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
+        }
 
-        if (obj == null)
+        if (obj == null) {
             return false;
+        }
 
-        if (getClass() != obj.getClass())
+        if (getClass() != obj.getClass()) {
             return false;
+        }
 
         TransferEntity other = (TransferEntity) obj;
 
         // Since the id must be unique, it makes sense
         // that it is the first instance field to be checked
         if (id == null) {
-            if (other.id != null)
+            if (other.id != null) {
                 return false;
-        } else if (!id.equals(other.id))
+            }
+        } else if (!id.equals(other.id)) {
             return false;
+        }
 
         if (accountId == null) {
-            if (other.accountId != null)
+            if (other.accountId != null) {
                 return false;
-        } else if (!accountId.equals(other.accountId))
+            }
+        } else if (!accountId.equals(other.accountId)) {
             return false;
+        }
 
         return innerEquals(other);
     }
 
     private boolean innerEquals(TransferEntity other) {
         if (amount == null) {
-            if (other.amount != null)
+            if (other.amount != null) {
                 return false;
-        } else if (!amount.equals(other.amount))
+            }
+        } else if (!amount.equals(other.amount)) {
             return false;
+        }
 
         return transferTS == other.transferTS;
     }
 
     public void generateId() {
-        if (id != null)
+        if (id != null) {
             throw new IllegalStateException(
                     "The id should not have been given any value");
+        }
 
         id = generateRandomId();
     }
@@ -119,9 +129,9 @@ public class TransferEntity {
     @Override
     public String toString() {
         return "TransferEntity [id=" + id + ", accountId="
-                + accountId + ", amount=" + amount +
-                ", transferTS=" + transferTS + " (" +
-                DateFormatter.getDateTimeString(transferTS)
+                + accountId + ", amount=" + amount
+                + ", transferTS=" + transferTS + " ("
+                + DateFormatter.getDateTimeString(transferTS)
                 + ")]";
     }
 

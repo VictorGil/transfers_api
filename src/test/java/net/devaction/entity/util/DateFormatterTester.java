@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public class DateFormatterTester {
     private static final Logger log = LoggerFactory.getLogger(DateFormatterTester.class);
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         new DateFormatterTester().run();
     }
 
