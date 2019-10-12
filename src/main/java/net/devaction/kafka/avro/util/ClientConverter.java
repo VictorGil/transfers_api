@@ -8,7 +8,7 @@ import net.devaction.kafka.avro.Client;
  *
  * since August 2019
  */
-public class ClientConverter{
+public class ClientConverter {
 
     private ClientConverter() {}
 

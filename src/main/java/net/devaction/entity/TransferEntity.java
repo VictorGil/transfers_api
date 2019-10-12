@@ -10,7 +10,7 @@ import net.devaction.entity.util.DateFormatter;
  *
  * since August 2019
  */
-public class TransferEntity{
+public class TransferEntity {
 
     private String id;
 
@@ -20,38 +20,38 @@ public class TransferEntity{
     private BigDecimal amount;
     private long transferTS;
 
-    public TransferEntity(String accountId, BigDecimal amount){
+    public TransferEntity(String accountId, BigDecimal amount) {
         id = generateRandomId();
         this.accountId = accountId;
         this.amount = amount;
         transferTS = System.currentTimeMillis();
     }
 
-    public TransferEntity(String id, String accountId, BigDecimal amount){
+    public TransferEntity(String id, String accountId, BigDecimal amount) {
         this.id = id;
         this.accountId = accountId;
         this.amount = amount;
         transferTS = System.currentTimeMillis();
     }
 
-    public TransferEntity(String accountId, BigDecimal amount, long transferTS){
+    public TransferEntity(String accountId, BigDecimal amount, long transferTS) {
         this.id = generateRandomId();
         this.accountId = accountId;
         this.amount = amount;
         this.transferTS = transferTS;
     }
 
-    public TransferEntity(String id, String accountId, BigDecimal amount, long transferTS){
+    public TransferEntity(String id, String accountId, BigDecimal amount, long transferTS) {
         this.id = id;
         this.accountId = accountId;
         this.amount = amount;
         this.transferTS = transferTS;
     }
 
-    public TransferEntity(){}
+    public TransferEntity() {}
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
 
@@ -64,7 +64,7 @@ public class TransferEntity{
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
 
@@ -78,13 +78,13 @@ public class TransferEntity{
 
         // Since the id must be unique, it makes sense
         // that it is the first instance field to be checked
-        if (id == null){
+        if (id == null) {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
             return false;
 
-        if (accountId == null){
+        if (accountId == null) {
             if (other.accountId != null)
                 return false;
         } else if (!accountId.equals(other.accountId))
@@ -94,7 +94,7 @@ public class TransferEntity{
     }
 
     private boolean innerEquals(TransferEntity other) {
-        if (amount == null){
+        if (amount == null) {
             if (other.amount != null)
                 return false;
         } else if (!amount.equals(other.amount))
@@ -103,7 +103,7 @@ public class TransferEntity{
         return transferTS == other.transferTS;
     }
 
-    public void generateId(){
+    public void generateId() {
         if (id != null)
             throw new IllegalStateException(
                     "The id should not have been given any value");
@@ -111,13 +111,13 @@ public class TransferEntity{
         id = generateRandomId();
     }
 
-    String generateRandomId(){
+    String generateRandomId() {
         // last 12 hexadecimal digits of the random UUID
         return UUID.randomUUID().toString().substring(24);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "TransferEntity [id=" + id + ", accountId="
                 + accountId + ", amount=" + amount +
                 ", transferTS=" + transferTS + " (" +
@@ -125,39 +125,39 @@ public class TransferEntity{
                 + ")]";
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
-    public void setId(String id){
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getAccountId(){
+    public String getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(String accountId){
+    public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
 
-    public BigDecimal getAmount(){
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount){
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
-    public long getTransferTS(){
+    public long getTransferTS() {
         return transferTS;
     }
 
-    public String getTransferDateTimeString(){
+    public String getTransferDateTimeString() {
         return DateFormatter.getDateTimeString(transferTS);
     }
 
-    public void setTransferTS(long transferTS){
+    public void setTransferTS(long transferTS) {
         this.transferTS = transferTS;
     }
 }

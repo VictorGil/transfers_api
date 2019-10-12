@@ -7,7 +7,7 @@ import java.util.UUID;
  *
  * since August 2019
  */
-public class ClientEntity{
+public class ClientEntity {
 
     private String id;
     private String firstName;
@@ -18,7 +18,7 @@ public class ClientEntity{
 
     public ClientEntity() {}
 
-    public ClientEntity(String id, String firstName, String lastName, String email, String address, String level){
+    public ClientEntity(String id, String firstName, String lastName, String email, String address, String level) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,7 +27,7 @@ public class ClientEntity{
         this.level = level;
     }
 
-    public ClientEntity(String firstName, String lastName, String email, String address, String level){
+    public ClientEntity(String firstName, String lastName, String email, String address, String level) {
         this.id = generateRandomId();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,7 +37,7 @@ public class ClientEntity{
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
 
@@ -52,7 +52,7 @@ public class ClientEntity{
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
 
@@ -64,19 +64,19 @@ public class ClientEntity{
 
         ClientEntity other = (ClientEntity) obj;
 
-        if (id == null){
+        if (id == null) {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
             return false;
 
-        if (email == null){
+        if (email == null) {
             if (other.email != null)
                 return false;
         } else if (!email.equals(other.email))
             return false;
 
-        if (address == null){
+        if (address == null) {
             if (other.address != null)
                 return false;
         } else if (!address.equals(other.address))
@@ -85,20 +85,20 @@ public class ClientEntity{
         return innerEquals(other);
     }
 
-    private boolean innerEquals(ClientEntity other){
-        if (firstName == null){
+    private boolean innerEquals(ClientEntity other) {
+        if (firstName == null) {
             if (other.firstName != null)
                 return false;
         } else if (!firstName.equals(other.firstName))
             return false;
 
-        if (lastName == null){
+        if (lastName == null) {
             if (other.lastName != null)
                 return false;
         } else if (!lastName.equals(other.lastName))
             return false;
 
-        if (level == null){
+        if (level == null) {
             if (other.level != null)
                 return false;
         } else if (!level.equals(other.level))
@@ -108,13 +108,13 @@ public class ClientEntity{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "ClientEntity [id=" + id + ", firstName=" + firstName
                 + ", lastName=" + lastName + ", email=" + email +
                 ", address=" + address + ", level=" + level + "]";
     }
 
-    public void generateId(){
+    public void generateId() {
         if (id != null)
             throw new IllegalStateException(
                     "The id should not have been given any value");
@@ -122,56 +122,56 @@ public class ClientEntity{
         id = generateRandomId();
     }
 
-    String generateRandomId(){
+    String generateRandomId() {
         // last 12 hexadecimal digits of the random UUID
         return UUID.randomUUID().toString().substring(24);
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
-    public void setId(String id){
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName){
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName(){
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName){
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address){
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getLevel(){
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(String level){
+    public void setLevel(String level) {
         this.level = level;
     }
 }

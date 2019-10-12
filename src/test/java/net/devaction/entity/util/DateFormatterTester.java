@@ -8,18 +8,18 @@ import org.slf4j.LoggerFactory;
  *
  * since August 2019
  */
-public class DateFormatterTester{
+public class DateFormatterTester {
     private static final Logger log = LoggerFactory.getLogger(DateFormatterTester.class);
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         new DateFormatterTester().run();
     }
 
-    private void run(){
+    private void run() {
         long millis = System.currentTimeMillis();
         String dateTime = DateFormatter.getDateTimeString(millis);
 
-        log.info("Current date and time: {} ({})", dateTime, millis);
+        log.info("Current date and time: {} ( {})", dateTime, millis);
 
         long maxJSinteger = (long) Math.pow(2, 53) - 1;
         log.info("Maximum integer value in JavaScript: {} --> "

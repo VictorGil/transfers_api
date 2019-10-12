@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
  *
  * since August 2019
  */
-class TransferEntityTest{
+class TransferEntityTest {
     private static final Logger log = LoggerFactory.getLogger(TransferEntityTest.class);
 
     @Test
-    void testGenerateRandomId(){
+    void testGenerateRandomId() {
         String id = new TransferEntity().generateRandomId();
         log.trace("Random id: {}", id);
         Assertions.assertEquals(12, id.length());

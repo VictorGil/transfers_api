@@ -16,11 +16,11 @@ import net.devaction.kafka.avro.Transfer;
  *
  * since August 2019
  */
-class TransferConverterTest{
+class TransferConverterTest {
     private static final Logger log = LoggerFactory.getLogger(TransferConverterTest.class);
 
     @Test
-    void testConvertToPojo01(){
+    void testConvertToPojo01() {
         TransferEntity entityExpected = new TransferEntity();
         entityExpected.setId("test_id");
         entityExpected.setAccountId("test_account_id");
@@ -44,7 +44,7 @@ class TransferConverterTest{
     }
 
     @Test
-    public void testConvertToAvro01(){
+    public void testConvertToAvro01() {
         Transfer avroExpected = new Transfer();
 
         avroExpected.setId("test_id");

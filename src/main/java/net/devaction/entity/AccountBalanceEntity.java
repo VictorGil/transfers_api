@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  * DTO/POJO class to avoid having the Avro-related code and limitations
  */
-public class AccountBalanceEntity{
+public class AccountBalanceEntity {
 
     private String accountId;
     private String clientId;
@@ -31,10 +31,10 @@ public class AccountBalanceEntity{
         return entity;
     }
 
-    public AccountBalanceEntity(){}
+    public AccountBalanceEntity() {}
 
     public AccountBalanceEntity(String id, String clientId, String transferId,
-            BigDecimal balance, long version){
+            BigDecimal balance, long version) {
         this.accountId = id;
         this.clientId = clientId;
         this.transferId = transferId;
@@ -42,7 +42,7 @@ public class AccountBalanceEntity{
         this.version = version;
     }
 
-    public AccountBalanceEntity(String id, String clientId){
+    public AccountBalanceEntity(String id, String clientId) {
         this.accountId = id;
         this.clientId = clientId;
         this.transferId = "INITIAL";
@@ -51,7 +51,7 @@ public class AccountBalanceEntity{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "AccountBalanceEntity [accountId=" + accountId +
                 ", clientId=" + clientId + ", transferId=" +
                 transferId + ", balance=" + balance +
@@ -59,7 +59,7 @@ public class AccountBalanceEntity{
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
 
@@ -73,7 +73,7 @@ public class AccountBalanceEntity{
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
 
@@ -85,7 +85,7 @@ public class AccountBalanceEntity{
 
         AccountBalanceEntity other = (AccountBalanceEntity) obj;
 
-        if (accountId == null){
+        if (accountId == null) {
             if (other.accountId != null)
                 return false;
         } else if (!accountId.equals(other.accountId))
@@ -94,7 +94,7 @@ public class AccountBalanceEntity{
         if (version != other.version)
             return false;
 
-        if (balance == null){
+        if (balance == null) {
             if (other.balance != null)
                 return false;
         } else if (!balance.equals(other.balance))
@@ -104,13 +104,13 @@ public class AccountBalanceEntity{
     }
 
     private boolean innerEquals(AccountBalanceEntity other) {
-        if (clientId == null){
+        if (clientId == null) {
             if (other.clientId != null)
                 return false;
         } else if (!clientId.equals(other.clientId))
             return false;
 
-        if (transferId == null){
+        if (transferId == null) {
             if (other.transferId != null)
                 return false;
         } else if (!transferId.equals(other.transferId))
@@ -120,43 +120,43 @@ public class AccountBalanceEntity{
     }
 
     // just getters and setters
-    public String getAccountId(){
+    public String getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(String accountId){
+    public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
 
-    public String getClientId(){
+    public String getClientId() {
         return clientId;
     }
 
-    public void setClientId(String clientId){
+    public void setClientId(String clientId) {
         this.clientId = clientId;
     }
 
-    public String getTransferId(){
+    public String getTransferId() {
         return transferId;
     }
 
-    public void setTransferId(String transferId){
+    public void setTransferId(String transferId) {
         this.transferId = transferId;
     }
 
-    public BigDecimal getBalance(){
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance){
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 
-    public long getVersion(){
+    public long getVersion() {
         return version;
     }
 
-    public void setVersion(long version){
+    public void setVersion(long version) {
         this.version = version;
     }
 }

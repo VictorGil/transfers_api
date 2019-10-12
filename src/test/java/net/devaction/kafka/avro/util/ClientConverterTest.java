@@ -12,10 +12,10 @@ import net.devaction.kafka.avro.Client;
  *
  * since August 2019
  */
-class ClientConverterTest{
+class ClientConverterTest {
 
     @Test
-    void testConvertToPojo01(){
+    void testConvertToPojo01() {
         ClientEntity expected = new ClientEntity();
 
         expected.generateId();
