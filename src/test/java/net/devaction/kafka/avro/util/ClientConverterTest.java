@@ -23,7 +23,7 @@ class ClientConverterTest {
         expected.setAddress("Moon Street 37");
         expected.setLevel("gold");
         expected.generateId();
-        
+
         Client client = new Client();
         client.setId(expected.getId());
         client.setFirstName("Joan");
