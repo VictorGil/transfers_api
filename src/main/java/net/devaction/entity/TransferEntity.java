@@ -9,6 +9,9 @@ import net.devaction.entity.util.DateFormatter;
  * @author Víctor Gil
  *
  * since August 2019
+ * 
+ * Analogous TypeScript class in the frontend:
+ * https://github.com/VictorGil/transfers_frontend/blob/master/src/app/entities/transferReceived.ts
  */
 public class TransferEntity {
 

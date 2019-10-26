@@ -8,6 +8,9 @@ import java.math.BigDecimal;
  * since August 2019
  *
  * DTO/POJO class to avoid having the Avro-related code and limitations
+ * 
+ * Analogous TypeScript class in the frontend:
+ * https://github.com/VictorGil/transfers_frontend/blob/master/src/app/entities/accountBalance.ts
  */
 public class AccountBalanceEntity {
 
