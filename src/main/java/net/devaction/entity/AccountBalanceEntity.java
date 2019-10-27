@@ -36,17 +36,17 @@ public class AccountBalanceEntity {
 
     public AccountBalanceEntity() {}
 
-    public AccountBalanceEntity(String id, String clientId, String transferId,
+    public AccountBalanceEntity(String accountId, String clientId, String transferId,
             BigDecimal balance, long version) {
-        this.accountId = id;
+        this.accountId = accountId;
         this.clientId = clientId;
         this.transferId = transferId;
         this.balance = balance;
         this.version = version;
     }
 
-    public AccountBalanceEntity(String id, String clientId) {
-        this.accountId = id;
+    public AccountBalanceEntity(String accountId, String clientId) {
+        this.accountId = accountId;
         this.clientId = clientId;
         this.transferId = "INITIAL";
         this.balance = BigDecimal.ZERO;
