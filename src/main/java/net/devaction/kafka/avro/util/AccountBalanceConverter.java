@@ -13,7 +13,8 @@ import net.devaction.kafka.avro.AccountBalance;
  */
 public class AccountBalanceConverter {
 
-    private AccountBalanceConverter() {}
+    private AccountBalanceConverter() {
+    }
 
     public static AccountBalanceEntity convertToPojo(AccountBalance account) {
         BigDecimal balance = NumUtil.convert(account.getBalanceUnscaled(),

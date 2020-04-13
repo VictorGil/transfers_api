@@ -16,7 +16,8 @@ public class ClientEntity {
     private String address;
     private String level;
 
-    public ClientEntity() {}
+    public ClientEntity() {
+    }
 
     public ClientEntity(String id, String firstName, String lastName, String email, String address, String level) {
         this.id = id;

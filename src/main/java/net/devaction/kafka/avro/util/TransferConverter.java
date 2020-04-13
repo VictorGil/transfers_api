@@ -13,7 +13,8 @@ import net.devaction.kafka.avro.Transfer;
  */
 public class TransferConverter {
 
-    private TransferConverter() {}
+    private TransferConverter() {
+    }
 
     public static TransferEntity convertToPojo(Transfer transfer) {
         BigDecimal amount = NumUtil.convert(transfer.getAmountUnscaled(),

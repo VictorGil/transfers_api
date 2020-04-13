@@ -9,7 +9,8 @@ import java.math.BigDecimal;
  */
 public class NumUtil {
 
-    private NumUtil() {}
+    private NumUtil() {
+    }
 
     public static BigDecimal convert(long number, int scale) {
         return BigDecimal.valueOf(number, scale);

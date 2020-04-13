@@ -51,7 +51,8 @@ public class TransferEntity {
         this.transferTS = transferTS;
     }
 
-    public TransferEntity() {}
+    public TransferEntity() {
+    }
 
     @Override
     public int hashCode() {

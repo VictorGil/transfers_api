@@ -34,7 +34,8 @@ public class AccountBalanceEntity {
         return entity;
     }
 
-    public AccountBalanceEntity() {}
+    public AccountBalanceEntity() {
+    }
 
     public AccountBalanceEntity(String accountId, String clientId, String transferId,
             BigDecimal balance, long version) {

@@ -10,7 +10,8 @@ import net.devaction.kafka.avro.Client;
  */
 public class ClientConverter {
 
-    private ClientConverter() {}
+    private ClientConverter() {
+    }
 
     public static ClientEntity convertToPojo(Client client) {
         ClientEntity entity = new ClientEntity();

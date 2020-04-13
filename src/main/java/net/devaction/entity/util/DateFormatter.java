@@ -13,7 +13,8 @@ import java.util.Locale;
  */
 public class DateFormatter {
 
-    private DateFormatter() {}
+    private DateFormatter() {
+    }
 
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(
             "EEEE dd-MMM-yyyy HH:mm:ss.SSSZ", new Locale("en", "US"));
